@@ -22,7 +22,7 @@ Before running tests you need to have the ethereum node running. Right now becau
 docker run -it --rm -p 8545:8501 0xorg/devnet
 ```
 
-Now we're ready to run tests:
+Now we're ready to run the tests:
 
 ```bash
 yarn test
