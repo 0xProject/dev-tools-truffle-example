@@ -16,7 +16,7 @@ This project contains two contracts. `MetaCoin` and `SafeMath`. `MetaCoin` is a 
 
 There is a single test that tries to send 2 tokens from the owner. Owner doesn't have enough tokens so it reverts.
 
-Before running tests you need to have the ethereum node running. Right now because of the issues in Ganache - it's not supported by 0x Dev Tools. We'll be running Geth using a docker container for simplicity.
+Before running tests you need to have the ethereum node running. Right now because of a [few issues with Ganache](https://github.com/0xProject/0x-monorepo/issues/1520) - it's not supported by 0x Dev Tools. We'll be running Geth from a docker container for simplicity.
 
 ```bash
 docker run -it --rm -p 8545:8501 0xorg/devnet
