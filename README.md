@@ -64,4 +64,4 @@ to run tests with [@0x/sol-coverage](http://sol-coverage.com) or [@0x/sol-profil
 
 ## Licence
 
-Apache 2
+Apache 2.0
