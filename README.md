@@ -3,7 +3,7 @@
 An example truffle project showing how to use 0x dev tools with truffle.
 
 - [@0x/sol-trace](https://www.sol-trace.com)
-- [@0x/sol-profiler](http://sol-profiler.com)
+- [@0x/sol-profiler](https://www.sol-profiler.com)
 - [@0x/sol-coverage](http://sol-coverage.com)
 
 ## Intro
