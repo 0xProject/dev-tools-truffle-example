@@ -40,6 +40,10 @@ They will fail and we'll get an error:
 Not very helpful. Now let's run it using [@0x/sol-trace](http://sol-trace.com)
 
 ```bash
+yarn trace
+```
+
+```bash
 dev-tools-truffle-example/contracts/SafeMath.sol:12:8:
         require(b <= a)
 dev-tools-truffle-example/contracts/MetaCoin.sol:13:25:
