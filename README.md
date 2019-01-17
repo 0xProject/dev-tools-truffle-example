@@ -10,7 +10,7 @@ An example truffle project showing how to use 0x dev tools with the Truffle fram
 
 First run `yarn` or `npm i` to install the dependencies.
 
-This project contains two contracts. `MetaCoin` and `SafeMath`. `MetaCoin` is a coin-like contract where the owner of it initially has 1 token. `SafeMath` is called by `MetaCoin` to perform addition and substraction with checks.
+This project contains two contracts. `MetaCoin` and `SafeMath`. `MetaCoin` is a coin-like contract where the owner of it initially has 1 token. `SafeMath` is called by `MetaCoin` to perform addition and substraction safely.
 
 ## Tests
 
