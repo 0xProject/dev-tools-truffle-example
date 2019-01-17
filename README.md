@@ -28,7 +28,7 @@ Now we're ready to run the tests:
 yarn test
 ```
 
-They failed and we've got an error:
+They will fail and we'll get an error:
 
 ```bash
      Error: Transaction: 0x012d87cbbd7799ef361872571e75d37b7e53192161a1955ef5d6c97f1531d613 exited with an error (status 0).
