@@ -39,7 +39,12 @@ if (mode === "profile") {
 }
 
 provider.addProvider(new RpcProvider({ rpcUrl: "http://localhost:8545" }));
-provider.start();
+provider.start(err => {
+  if (err !== undefined) {
+    console.log(err);
+    process.exit(1);
+  }
+});
 /**
  * HACK: Truffle providers should have `send` function, while `ProviderEngine` creates providers with `sendAsync`,
  * but it can be easily fixed by assigning `sendAsync` to `send`.
