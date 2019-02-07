@@ -1,8 +1,8 @@
 {
   "scripts": {
     "trace": "MODE=trace truffle test",
-    "coverage": "npm run clean && MODE=coverage truffle test; istanbul report html && open coverage/index.html",
-    "profile": "npm run clean && MODE=profile truffle test; istanbul report html && open coverage/index.html",
+    "coverage": "npm run clean && MODE=coverage truffle test; istanbul report html && opn coverage/index.html",
+    "profile": "npm run clean && MODE=profile truffle test; istanbul report html && opn coverage/index.html",
     "clean": "shx rm -rf coverage",
     "test": "truffle test",
     "compile": "truffle compile",
@@ -17,6 +17,7 @@
     "@0x/sol-trace": "^2.0.3",
     "@0x/subproviders": "^2.1.11",
     "istanbul": "^0.4.5",
+    "opn-cli": "^4.0.0",
     "truffle": "^5.0.2",
     "shx": "^0.3.2",
     "web3-provider-engine": "^14.1.0"
