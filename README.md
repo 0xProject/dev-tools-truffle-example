@@ -5,6 +5,7 @@ An example truffle project showing how to use 0x dev tools with the Truffle fram
 - [@0x/sol-trace](https://www.sol-trace.com)
 - [@0x/sol-profiler](https://www.sol-profiler.com)
 - [@0x/sol-coverage](https://www.sol-coverage.com)
+- [@0x/sol-compiler](https://www.sol-compiler.com)
 
 ## Intro
 
@@ -65,6 +66,18 @@ yarn coverage
 ```
 
 to run tests with [@0x/sol-coverage](http://sol-coverage.com) or [@0x/sol-profiler](http://sol-profiler.com) accordingly.
+
+To test [sol-compiler](https://sol-compiler.com) run
+
+```bash
+yarn sol-compiler
+```
+
+or
+
+```bash
+yarn sol-compiler:watch
+```
 
 ## Licence
 
