@@ -62,6 +62,7 @@ typings/
 
 # compiled contracts
 .0x-artifacts
+artifacts
 
 # coverage/profiler report
 coverage

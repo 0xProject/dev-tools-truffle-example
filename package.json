@@ -6,7 +6,9 @@
     "clean": "shx rm -rf coverage",
     "test": "truffle test",
     "compile": "truffle compile",
-    "migrate": "truffle migrate"
+    "migrate": "truffle migrate",
+    "sol-compiler": "sol-compiler",
+    "sol-compiler:watch": "sol-compiler -w"
   },
   "dependencies": {
     "@0x/sol-compiler": "^3.0.2",
