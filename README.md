@@ -17,12 +17,6 @@ This project contains two contracts. `MetaCoin` and `SafeMath`. `MetaCoin` is a 
 
 There is a single test that tries to send 2 tokens from the owner. Owner doesn't have enough tokens so it reverts.
 
-Before running tests you need to have the ethereum node running. Right now because of a [few issues with Ganache](https://github.com/0xProject/0x-monorepo/issues/1520) - it's not supported by 0x Dev Tools. We'll be running Geth from a docker container for simplicity.
-
-```bash
-docker run -it --rm -p 8545:8501 0xorg/devnet
-```
-
 Now we're ready to run the tests:
 
 ```bash
@@ -40,6 +34,8 @@ They will fail and we'll get an error:
 
 Not very helpful. Now let's run it using [@0x/sol-trace](http://sol-trace.com)
 
+## Sol-trace
+
 ```bash
 yarn trace
 ```
@@ -53,19 +49,29 @@ dev-tools-truffle-example/contracts/MetaCoin.sol:13:25:
 
 That's better. Now we don't need to check all the require and revert statements but we know exactly which one reverted and who called it.
 
-You can also run:
-
-```bash
-yarn profile
-```
-
-or
+## Sol-coverage
 
 ```bash
 yarn coverage
 ```
 
-to run tests with [@0x/sol-coverage](http://sol-coverage.com) or [@0x/sol-profiler](http://sol-profiler.com) accordingly.
+It will generate the HTML report and open it in the default browser. You can use any other istanbul reporter too. (text, json, etc.).
+
+## Sol-profiler
+
+[@0x/sol-profiler](http://sol-profiler.com) is gonna require some setup.
+
+Because of a [few issues with Ganache](https://github.com/0xProject/0x-monorepo/issues/1520) - it's not supported by [@0x/sol-profiler](http://sol-profiler.com) yet. We'll be running Geth from a docker container for simplicity.
+
+```bash
+docker run -it --rm -p 8545:8501 0xorg/devnet
+```
+
+```bash
+yarn profile
+```
+
+## Sol-compiler
 
 To test [sol-compiler](https://sol-compiler.com) run
 
