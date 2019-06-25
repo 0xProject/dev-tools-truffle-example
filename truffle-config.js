@@ -29,7 +29,9 @@ if (mode === "profile") {
     global.coverageSubprovider = new CoverageSubprovider(
       artifactAdapter,
       defaultFromAddress,
-      isVerbose
+      {
+        isVerbose,
+      }
     );
     provider.addProvider(global.coverageSubprovider);
   } else if (mode === "trace") {
