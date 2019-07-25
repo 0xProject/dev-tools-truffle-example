@@ -1,7 +1,6 @@
 const ProviderEngine = require("web3-provider-engine");
-const RpcProvider = require("web3-provider-engine/subproviders/rpc.js");
+const WebsocketSubprovider = require("web3-provider-engine/subproviders/websocket.js")
 const { TruffleArtifactAdapter } = require("@0x/sol-trace");
-const { GanacheSubprovider } = require("@0x/subproviders");
 const { ProfilerSubprovider } = require("@0x/sol-profiler");
 const { CoverageSubprovider } = require("@0x/sol-coverage");
 const { RevertTraceSubprovider } = require("@0x/sol-trace");
@@ -42,8 +41,8 @@ if (mode === "profile") {
     );
     provider.addProvider(revertTraceSubprovider);
   }
-  const ganahceSubprovider = new GanacheSubprovider();
-  provider.addProvider(ganahceSubprovider);
+  
+  provider.addProvider(new WebsocketSubprovider({ rpcUrl: "http://localhost:8545" }))
 }
 provider.start(err => {
   if (err !== undefined) {
