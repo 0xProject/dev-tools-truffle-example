@@ -59,14 +59,6 @@ It will generate the HTML report and open it in the default browser. You can use
 
 ## Sol-profiler
 
-[@0x/sol-profiler](http://sol-profiler.com) is gonna require some setup.
-
-Because of a [few issues with Ganache](https://github.com/0xProject/0x-monorepo/issues/1520) - it's not supported by [@0x/sol-profiler](http://sol-profiler.com) yet. We'll be running Geth from a docker container for simplicity.
-
-```bash
-docker run -it --rm -p 8545:8501 0xorg/devnet
-```
-
 ```bash
 yarn profile
 ```
