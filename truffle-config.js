@@ -22,7 +22,7 @@ if (mode === "profile") {
   );
   global.profilerSubprovider.stop();
   provider.addProvider(global.profilerSubprovider);
-  provider.addProvider(new RpcProvider({ rpcUrl: "http://localhost:8545" }));
+  provider.addProvider(new WebsocketSubprovider({ rpcUrl: "http://localhost:8545" }));
 } else {
   if (mode === "coverage") {
     global.coverageSubprovider = new CoverageSubprovider(
