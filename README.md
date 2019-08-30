@@ -51,11 +51,52 @@ That's better. Now we don't need to check all the require and revert statements 
 
 ## Sol-coverage
 
+As per [`sol-cover` docs](https://0x.org/docs/sol-coverage#usage) you need to make the following call after your test suite has finished executing in order for raw coverage data to get written to disk:
+
+```
+await coverageSubprovider.writeCoverageAsync();
+```
+
+One way of doing this is using a Mocha global `after` hook at the top of _every_ test file:
+
+```
+/* file: test/utils/index.js */
+
+let globalHooksSetup = false
+export const setupGlobalHooks = () => {
+  if (!globalHooksSetup) {
+    globalHooksSetup = true
+
+    after('global after hook', async () => {
+      if (global.coverageSubprovider) {
+        await global.coverageSubprovider.writeCoverageAsync()
+      }
+    })
+  }
+}
+
+/* file: test/test.js */
+
+import { setupGlobalHooks } from './utils'
+setupGlobalHooks()
+
+contract(... // test code
+
+/* file: test/test2.js */
+
+import { setupGlobalHooks } from './utils'
+setupGlobalHooks()
+
+contract(... // test code
+```
+
+Now if you run the following command, raw coverage results will get written to `./coverage/coverage.json`:
+
 ```bash
 yarn coverage
 ```
 
-It will generate the HTML report and open it in the default browser. You can use any other istanbul reporter too. (text, json, etc.).
+It will also generate a HTML report and open it in the default browser. You can use any other istanbul reporters too. (text, json, etc.).
 
 ## Sol-profiler
 
